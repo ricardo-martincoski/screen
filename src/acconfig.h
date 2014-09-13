@@ -476,7 +476,7 @@
 #undef GETTTYENT
 
 /*
- * Define USEBCOPY if the bcopy/memcpy from your system's C library
+ * Define USEBCOPY if the bcopy from your system's C library
  * supports the overlapping of source and destination blocks.  When
  * undefined, screen uses its own (probably slower) version of bcopy().
  * 
@@ -487,7 +487,6 @@
  * Their memove fails the test in the configure script. Sigh. (Juergen)
  */
 #undef USEBCOPY
-#undef USEMEMCPY
 #undef USEMEMMOVE
 
 /*

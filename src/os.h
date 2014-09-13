@@ -142,12 +142,8 @@ extern int errno;
 # ifdef USEMEMMOVE
 #  define bcopy(s,d,len) memmove(d,s,len)
 # else
-#  ifdef USEMEMCPY
-#   define bcopy(s,d,len) memcpy(d,s,len)
-#  else
-#   define NEED_OWN_BCOPY
-#   define bcopy xbcopy
-#  endif
+#  define NEED_OWN_BCOPY
+#  define bcopy xbcopy
 # endif
 #endif
 

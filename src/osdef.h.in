@@ -58,16 +58,8 @@ extern int   bcmp __P((char *, char *, int));
 extern int   killpg __P((int, int));
 #endif
 
-#ifndef USEBCOPY
-# ifdef USEMEMCPY
-extern void  memcpy __P((char *, char *, int));
-# else
-#  ifdef USEMEMMOVE
+#if defined(USEMEMMOVE) && !defined(USEBCOPY)
 extern void  memmove __P((char *, char *, int));
-#  else
-extern void  bcopy __P((char *, char *, int));
-#  endif
-# endif
 #else
 extern void  bcopy __P((char *, char *, int));
 #endif
